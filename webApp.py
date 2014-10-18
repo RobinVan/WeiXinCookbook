@@ -53,14 +53,13 @@ class WeixinInterface:
                     'title': caipu['title'],
                     'description': caipu['description'],
                     'picurl': caipu['picurl'],
-                    'url': caipu['url']
+                    'url':'http://104.131.156.81/test'
+                    #'url': caipu['url']
                 }
                 news_list.append(news_map)
             response = wechat.response_news(news_list)
         else:
             response = wechat.response_text(u'不能识别')
-        # 现在直接将 response 变量内容直接作为 HTTP Response 响应微信服务器即可，此处为了演示返回内容，直接将响应进行输出
-        #print response
         return response
         #else:
         #print 'error'
