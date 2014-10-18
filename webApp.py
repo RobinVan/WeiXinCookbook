@@ -53,8 +53,8 @@ class WeixinInterface:
                     'title': caipu['title'],
                     'description': caipu['description'],
                     'picurl': caipu['picurl'],
-                    'url':'http://104.131.156.81/test'
-                    #'url': caipu['url']
+                    #'url':'http://104.131.156.81/test'
+                    'url': caipu['url']
                 }
                 news_list.append(news_map)
             response = wechat.response_news(news_list)
