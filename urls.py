@@ -1,5 +1,6 @@
 urls = (
     '/','WeixinInterface',
+    '/test','urlHandler.test',
     '/caipu1','urlHandler.caipu1',
     '/caipu2','urlHandler.caipu2',
     '/caipu3','urlHandler.caipu3',
