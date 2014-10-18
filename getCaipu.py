@@ -18,7 +18,7 @@ def getCaipu(id):
                 result = data['result']['data']
                 caipu = result[0]
                 f = open('templates/' + 'caipu' + str(id) + '.html', 'w')
-                f.write(unicode.encode(u'<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n', 'utf-8'))
+                f.write(unicode.encode(u'<meta http-equiv="Content-Type" content="width=device-width, initial-scale=1, charset=utf-8"/>\n', 'utf-8'))
                 f.write(unicode.encode('<center><h2>' + caipu['title'] + '</h2></center>\n', 'utf-8'))
                 #caipu_information['title'] = caipu['title']
                 f.write(unicode.encode('<p>' + caipu['imtro'] + '</p>\n', 'utf-8'))
