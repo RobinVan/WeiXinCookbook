@@ -1,4 +1,3 @@
----
 title: 不折腾会死，Blog迁到Github了！
 layout: post
 tags:
@@ -6,7 +5,7 @@ tags:
   - skill
 ---
 
-![](/media/files/2014/08/22.jpg) 
+![](test.jpg)
 几个月前把Blog[从wordpress迁到lofter](http://lufo816.github.io/2014/06/08/ByeByeBeautiful.html)，果然还是不能用这种图省事的方法，最近又遇到了新问题。lofter上各种推荐烦死人，并且文章分享到朋友圈排版丑的要死。于是乎折腾了两三天迁到github。特别感谢[waynezhang](https://github.com/waynezhang/blog)提供的模板，风格极简，字体排版美如画，不能更赞。
 
 其实这本是挺简单的事，无奈生性愚笨，折腾好久才搞定，下面就说下我遇到的那些坑。
