@@ -26,7 +26,7 @@ def getCaipu(id):
                 result = data['result']['data']
                 caipu = result[0]
                 url = 'http://104.131.156.81/' + 'caipu' + str(id)
-                cursor.execute("""insert into caipu values(%s,%s,%s,%s,%s)""",(id, unicode.encode(caipu['title'].decode("utf-8-sig"), 'utf-8'), unicode.encode(caipu['imtro'].decode("utf-8-sig"), 'utf-8'), unicode.encode(caipu['albums'][0].decode("utf-8-sig"), 'utf-8'), unicode.encode(url, 'utf-8'),))
+                cursor.execute("""insert into caipu values(%s,%s,%s,%s,%s)""",(id, caipu['title'].decode("utf-8-sig"), caipu['imtro'].decode("utf-8-sig"), caipu['albums'][0], url,))
                 #cursor.execute("""insert into caipu values(%s,%s,%s,%s,%s)""",(id, '', '', caipu['albums'][0], url,))
                 #cursor.execute("""insert into caipu values(%s,%s,%s,%s,%s)""",(id, caipu['title'], caipu['imtro'], caipu['albums'][0], url,))
                 db.commit()
