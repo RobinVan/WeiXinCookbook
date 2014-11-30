@@ -4,7 +4,7 @@ import urllib2, json, chardet, os, MySQLdb
 def getCaipu(id):
     APPKEY = 'c553d2972372549d57351f38a930f805'
     url = 'http://apis.juhe.cn/cook/queryid?key=' + APPKEY + '&id='
-    db = MySQLdb.connect(host='localhost',user='root',passwd='lxb',db='caipu')
+    db = MySQLdb.connect(host='localhost',user='root',passwd='lxb',db='caipu',charset='utf8')
     cursor = db.cursor()
     db.set_character_set('utf8')
     cursor.execute('SET NAMES utf8;')
@@ -69,15 +69,15 @@ def getCaipu(id):
         #result = data['result']['data']
         #caipu = result[0]
         #print count
-        caipu_all = cursor.fetchall()
-        print caipu_all
-        for caipu in caipu_all:
-            print caipu
-            caipu_information['title'] = caipu[1]
-            caipu_information['description'] = caipu[2]
-            #caipu_information['picurl'] = 'null'
-            caipu_information['picurl'] = caipu[3]
-            caipu_information['url'] = caipu[4]
+        #caipu_all = cursor.fetchall()
+        #print caipu_all
+        #for caipu in caipu_all:
+        caipu = cursor.fetchone()
+        caipu_information['title'] = caipu[1]
+        caipu_information['description'] = caipu[2]
+        #caipu_information['picurl'] = 'null'
+        caipu_information['picurl'] = caipu[3]
+        caipu_information['url'] = caipu[4]
     cursor.close()
     db.close()
 
