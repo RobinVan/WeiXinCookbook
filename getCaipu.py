@@ -17,6 +17,7 @@ def getCaipu(id):
         try:
             res = urllib2.urlopen(url + str(id))
             res_read_uni = res.read().decode("utf-8-sig")
+            unicode.encode(res_read_uni, "utf-8")
             print chardet.detect(res_read_uni)
             #jsonFile = open('json/' + 'caipu' + str(id) + '.json', 'w')
             #jsonFile.write(unicode.encode(res_read_uni, 'utf-8'))
@@ -28,7 +29,7 @@ def getCaipu(id):
                 url = 'http://104.131.156.81/' + 'caipu' + str(id)
                 print chardet.detect(caipu['title'])
                 print chardet.detect(caipu['title'].decode("ascii"))
-                cursor.execute("""insert into caipu values(%s,%s,%s,%s,%s)""",(id, caipu['title'].decode("ascii"), caipu['imtro'].decode("ascii"), caipu['albums'][0], url,))
+                cursor.execute("""insert into caipu values(%s,%s,%s,%s,%s)""",(id, caipu['title'].decode("utf-8"), caipu['imtro'].decode("utf-8"), caipu['albums'][0], url,))
                 #cursor.execute("""insert into caipu values(%s,%s,%s,%s,%s)""",(id, '', '', caipu['albums'][0], url,))
                 #cursor.execute("""insert into caipu values(%s,%s,%s,%s,%s)""",(id, caipu['title'], caipu['imtro'], caipu['albums'][0], url,))
                 db.commit()
