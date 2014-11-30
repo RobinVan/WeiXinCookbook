@@ -6,11 +6,11 @@ def getCaipu(id):
     url = 'http://apis.juhe.cn/cook/queryid?key=' + APPKEY + '&id='
     db = MySQLdb.connect(host='localhost',user='root',passwd='lxb',db='caipu')
     cursor = db.cursor()
-    count = cursor.execute("""select * from caipu where id = %s""",(id,))
     db.set_character_set('utf8')
     cursor.execute('SET NAMES utf8;')
     cursor.execute('SET CHARACTER SET utf8;')
     cursor.execute('SET character_set_connection=utf8;')
+    count = cursor.execute("""select * from caipu where id = %s""",(id,))
     caipu_information = {}
     #if not(os.path.isfile('json/' + 'caipu' + str(id) + '.json')) :
     if count == 0 :
@@ -68,7 +68,7 @@ def getCaipu(id):
         #data = json.load(jsonFile)
         #result = data['result']['data']
         #caipu = result[0]
-        print count
+        #print count
         caipu_all = cursor.fetchall()
         print caipu_all
         for caipu in caipu_all:
