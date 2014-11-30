@@ -60,7 +60,7 @@ def getCaipu(id):
         #data = json.load(jsonFile)
         #result = data['result']['data']
         #caipu = result[0]
-        caipu = cursor.fetchall()
+        caipu = cursor.fetchone()
         caipu_information['title'] = caipu[1]
         caipu_information['description'] = caipu[2]
         #caipu_information['picurl'] = 'null'
