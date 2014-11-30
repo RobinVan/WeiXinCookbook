@@ -69,6 +69,7 @@ def getCaipu(id):
         #result = data['result']['data']
         #caipu = result[0]
         caipu = cursor.fetchone()
+        print caipu
         caipu_information['title'] = caipu[1]
         caipu_information['description'] = caipu[2]
         #caipu_information['picurl'] = 'null'
