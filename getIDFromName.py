@@ -2,7 +2,7 @@
 import urllib2, json, chardet
 
 def getIDFromName(name):
-    APPKEY = '772138d3588d780c86591a4eedf0f634'
+    APPKEY = 'c553d2972372549d57351f38a930f805'
     url = 'http://apis.juhe.cn/cook/query?key=' + APPKEY + '&menu=' + name.encode('utf-8') + '&rn=5'
     id_list = []
     try:
