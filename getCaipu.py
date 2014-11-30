@@ -68,7 +68,9 @@ def getCaipu(id):
         #data = json.load(jsonFile)
         #result = data['result']['data']
         #caipu = result[0]
+        print count
         caipu_all = cursor.fetchall()
+        print caipu_all
         for caipu in caipu_all:
             print caipu
             caipu_information['title'] = caipu[1]
