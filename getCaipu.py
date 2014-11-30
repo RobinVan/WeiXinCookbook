@@ -21,8 +21,8 @@ def getCaipu(id):
             if reason == 'Success':
                 result = data['result']['data']
                 caipu = result[0]
-                url = 'http://104.131.156.81/' + 'caipu' + str(id)
-                cursor.execute("""insert into caipu values(%s,%s,%s,%s,%s)""",(id, unicode.encode(caipu['title'], 'utf-8'), unicode.encode(caipu['imtro'], 'utf-8'), unicode.encode(caipu['albums'][0], 'utf-8'), unicode.encode(url, 'utf-8'),))
+                url = u'http://104.131.156.81/' + 'caipu' + str(id)
+                cursor.execute("""insert into caipu values(%s,%s,%s,%s,%s)""",(id, unicode.encode(caipu['title'].decode("utf-8-sig"), 'utf-8'), unicode.encode(caipu['imtro'].decode("utf-8-sig"), 'utf-8'), unicode.encode(caipu['albums'][0].decode("utf-8-sig"), 'utf-8'), unicode.encode(url, 'utf-8'),))
                 db.commit()
                 f = open('templates/' + 'caipu' + str(id) + '.html', 'w')
                 f.write(unicode.encode(u'<meta http-equiv="Content-Type" content="width=device-width, initial-scale=1, charset=utf-8"/>\n', 'utf-8'))
