@@ -1,5 +1,5 @@
 #-*-coding:utf-8-*-
-import urllib2, json, chardet, os
+import urllib2, json, chardet, os, MySQLdb
 
 def getCaipu(id):
     APPKEY = '772138d3588d780c86591a4eedf0f634'
