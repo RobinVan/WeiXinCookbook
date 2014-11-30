@@ -7,6 +7,10 @@ def getCaipu(id):
     db = MySQLdb.connect(host='localhost',user='root',passwd='lxb',db='caipu')
     cursor = db.cursor()
     count = cursor.execute("""select * from caipu where id = %s""",(id,))
+    db.set_character_set('utf8')
+    cursor.execute('SET NAMES utf8;')
+    cursor.execute('SET CHARACTER SET utf8;')
+    cursor.execute('SET character_set_connection=utf8;')
     caipu_information = {}
     #if not(os.path.isfile('json/' + 'caipu' + str(id) + '.json')) :
     if count == 0 :
