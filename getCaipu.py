@@ -68,13 +68,14 @@ def getCaipu(id):
         #data = json.load(jsonFile)
         #result = data['result']['data']
         #caipu = result[0]
-        caipu = cursor.fetchone()
-        print caipu
-        caipu_information['title'] = caipu[1]
-        caipu_information['description'] = caipu[2]
-        #caipu_information['picurl'] = 'null'
-        caipu_information['picurl'] = caipu[3]
-        caipu_information['url'] = caipu[4]
+        caipu_all = cursor.fetchall()
+        for caipu in caipu_all:
+            print caipu
+            caipu_information['title'] = caipu[1]
+            caipu_information['description'] = caipu[2]
+            #caipu_information['picurl'] = 'null'
+            caipu_information['picurl'] = caipu[3]
+            caipu_information['url'] = caipu[4]
     cursor.close()
     db.close()
 
