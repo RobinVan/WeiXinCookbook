@@ -6,8 +6,9 @@ def getCaipu(id):
     url = 'http://apis.juhe.cn/cook/queryid?key=' + APPKEY + '&id='
     db = MySQLdb.connect(host='localhost',user='root',passwd='lxb',db='caipu',charset='utf8')
     cursor = db.cursor()
-    db.set_character_set('utf8')
     '''
+    db.set_character_set('utf8')
+
     cursor.execute('SET NAMES utf8;')
     cursor.execute('SET CHARACTER SET utf8;')
     cursor.execute('SET character_set_connection=utf8;')
