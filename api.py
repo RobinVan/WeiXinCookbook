@@ -8,6 +8,21 @@ urls = (
 app = web.application(urls, globals())
 
 class api:
+
+    def getList(id_list):
+        news_list = []
+        for id in id_list:
+            caipu = getCaipu.getCaipu(id)
+            news_map = {
+                'title': caipu['title'],
+                'description': caipu['description'],
+                'picurl': caipu['picurl'],
+                #'url':'http://104.131.156.81/test'
+                'url': caipu['url']
+            }
+            news_list.append(news_map)
+        return news_list
+
     def GET(self):
         content = web.input()['caipu']
         #print content
@@ -27,19 +42,6 @@ class api:
             else:
                 return '不能识别'
 
-    def getList(id_list):
-        news_list = []
-        for id in id_list:
-            caipu = getCaipu.getCaipu(id)
-            news_map = {
-                'title': caipu['title'],
-                'description': caipu['description'],
-                'picurl': caipu['picurl'],
-                #'url':'http://104.131.156.81/test'
-                'url': caipu['url']
-            }
-            news_list.append(news_map)
-        return news_list
 
 
 if __name__ == '__main__':
