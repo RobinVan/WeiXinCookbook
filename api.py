@@ -28,7 +28,7 @@ class api:
         #print content
         if content == 'today':
             caipu_list = range(1, 80452)
-            random_list = random.simple(caipu_list, 5)
+            random_list = random.sample(caipu_list, 5)
             #news_list = self.getList(caipu_list)
             return self.getList(caipu_list)
         else:
