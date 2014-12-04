@@ -28,8 +28,9 @@ class api:
         #print content
         if content == 'today':
             caipu_list = range(1, 80452)
-            news_list = self.getList(caipu_list)
-            return news_list
+            random_list = random.simple(caipu_list, 5)
+            #news_list = self.getList(caipu_list)
+            return self.getList(caipu_list)
         else:
             if content in tags.tags.keys():
                 #response = wechat.response_text(tags.tags[content])
@@ -37,8 +38,8 @@ class api:
             else:
                 id_list = getIDFromName.getIDFromName(content)
             if id_list:
-                news_list = self.getList(id_list)
-                return news_list
+                #news_list = self.getList(id_list)
+                return self.getList(id_list)
             else:
                 return '不能识别'
 
