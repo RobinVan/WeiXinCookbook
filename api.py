@@ -30,7 +30,7 @@ class api:
             caipu_list = range(1, 80452)
             random_list = random.sample(caipu_list, 5)
             #news_list = self.getList(caipu_list)
-            return getList(random_list)
+            return self.getList(random_list)
         else:
             if content in tags.tags.keys():
                 #response = wechat.response_text(tags.tags[content])
@@ -39,7 +39,7 @@ class api:
                 id_list = getIDFromName.getIDFromName(content)
             if id_list:
                 #news_list = self.getList(id_list)
-                return getList(id_list)
+                return self.getList(id_list)
             else:
                 return '不能识别'
 
