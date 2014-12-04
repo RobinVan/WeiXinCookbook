@@ -9,7 +9,7 @@ app = web.application(urls, globals())
 class api:
     def GET(self):
         content = web.input()['caipu']
-        print content
+        #print content
         if content in tags.tags.keys():
             #response = wechat.response_text(tags.tags[content])
             id_list = getIDFromTag.getIDFromTag(tags.tags[content])
@@ -29,7 +29,7 @@ class api:
                 news_list.append(news_map)
             return news_list
         else:
-            return u'不能识别'
+            return '不能识别'
 
 if __name__ == '__main__':
     app.run()
