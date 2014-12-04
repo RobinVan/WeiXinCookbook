@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import web
 import tags, getCaipu, getIDFromTag, getIDFromName, urls, urlHandler
 
