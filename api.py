@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import web
+import web, random
 import tags, getCaipu, getIDFromTag, getIDFromName, urls, urlHandler
 
 urls = (
