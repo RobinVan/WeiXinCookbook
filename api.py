@@ -9,7 +9,7 @@ app = web.application(urls, globals())
 
 class api:
 
-    def getList(id_list):
+    def getList(self, id_list):
         news_list = []
         for id in id_list:
             caipu = getCaipu.getCaipu(id)
