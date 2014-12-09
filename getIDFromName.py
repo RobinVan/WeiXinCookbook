@@ -18,7 +18,7 @@ def getIDFromName(name):
                 result = data['result']['data']
                 for caipu in result:
                     id_list.append(caipu['id'])
-                    cursor.execute("""insert into getIDByName values(%s,%d)""",(name, caipu['id']))
+                    cursor.execute("""insert into getIDByName values(%s,%s)""",(name, caipu['id']))
                 db.commit()
                 print 'get ID from tag success'
             else:
