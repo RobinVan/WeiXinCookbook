@@ -1,8 +1,8 @@
 #-*-coding:utf-8-*-
-import urllib2, json, chardet, os, MySQLdb
+import urllib2, json, chardet, os, MySQLdb, appKey
 
 def getCaipu(id):
-    APPKEY = 'c553d2972372549d57351f38a930f805'
+    APPKEY = APPKEY = appKey.APPKEY
     url = 'http://apis.juhe.cn/cook/queryid?key=' + APPKEY + '&id='
     db = MySQLdb.connect(host='localhost',user='root',passwd='lxb',db='caipu',charset='utf8')
     cursor = db.cursor()

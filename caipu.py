@@ -1,7 +1,7 @@
 #-*-coding:utf-8-*-
-import urllib2, json, chardet
+import urllib2, json, chardet, appKey
 
-APPKEY = 'c553d2972372549d57351f38a930f805'
+APPKEY = appKey.APPKEY
 url = 'http://apis.juhe.cn/cook/category?key=' + APPKEY
 try:
     res = urllib2.urlopen(url)
