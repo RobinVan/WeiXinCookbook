@@ -1,5 +1,5 @@
 #-*-coding:utf-8-*-
-import urllib2, json, chardet, appKey
+import urllib2, json, chardet, appKey, MySQLdb
 
 def getIDFromName(name):
     APPKEY = APPKEY = appKey.APPKEY
@@ -18,8 +18,8 @@ def getIDFromName(name):
                 result = data['result']['data']
                 for caipu in result:
                     id_list.append(caipu['id'])
-                    cursor.execute("""insert into getIDByName values(%s,%d)""",(name, caipu['id'])
-                    db.commit()
+                    cursor.execute("""insert into getIDByName values(%s,%d)""",(name, caipu['id']))
+                db.commit()
                 print 'get ID from tag success'
             else:
                 print 'get ID from tag ERROR'
@@ -29,4 +29,6 @@ def getIDFromName(name):
         id_all = cursor.fetchall()
         for id in id_all:
             id_list.append(id[1])
+    cursor.close()
+    db.close()
     return id_list
