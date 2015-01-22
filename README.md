@@ -16,7 +16,7 @@
 
 ##运行环境
 
-将所有代码托管到服务器上，设定好微信公共号的服务器地址，服务器要求有以下python库：wechat_sdk，chardet，MySQLdb。将appKey.py里的APPKEY替换为你在[聚合数据](http://www.juhe.cn/)申请的APPKEY。执行下面语句:
+将所有代码托管到服务器上，设定好微信公共号的服务器地址，服务器要求有以下python库：wechat_sdk，chardet，MySQLdb。将appKey.py里的APPKEY替换为你在[聚合数据](http://www.juhe.cn/)申请的APPKEY，参考getCaipu.py，getIDFromTag.py，getIDFromName.py里操作数据库的语句，在服务器上创建对应的数据库，如果使用数据库时遇到关于编码的问题，可以参考[我的博客](http://lufo816.github.io/2014/12/01/PythonMySQL.html)。执行下面语句:
 
 	sudo python webApp.py 80
 
@@ -27,5 +27,3 @@
 	python api.py 8000(任意未被占用的端口号)
 
 访问服务器的域名+端口号，得到JSON格式数据。
-
-如果想用数据库存储菜谱信息，请参考getCaipu.py，getIDFromTag.py，getIDFromName.py里操作数据库的语句，在服务器上创建对应的数据库，如果使用数据库时遇到关于编码的问题，可以参考[我的博客](http://lufo816.github.io/2014/12/01/PythonMySQL.html)。
